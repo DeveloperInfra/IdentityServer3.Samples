@@ -5,15 +5,14 @@ var footer = require('./footer');
 describe('footer component', function () {
   beforeEach(function () {
     angular
-      .module('fountainFooter', ['app/footer.html'])
-      .component('fountainFooter', footer);
-    angular.mock.module('fountainFooter');
+      .module('appFooter', ['app/footer.html'])
+      .component('appFooter', footer);
+    angular.mock.module('appFooter');
   });
 
-  it('should render \'FountainJS team\'', angular.mock.inject(function ($rootScope, $compile) {
-    var element = $compile('<fountain-footer></fountain-footer>')($rootScope);
+  it('should render the footer', angular.mock.inject(function ($rootScope, $compile) {
+    var element = $compile('<app-footer></app-footer>')($rootScope);
     $rootScope.$digest();
-    var footer = element.find('a');
-    expect(footer.html().trim()).toEqual('FountainJS team');
+    expect(element.find('footer').length).toEqual(1);
   }));
 });

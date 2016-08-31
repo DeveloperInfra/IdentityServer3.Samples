@@ -5,15 +5,15 @@ var title = require('./title');
 describe('title component', function () {
   beforeEach(function () {
     angular
-      .module('fountainTitle', ['app/title.html'])
-      .component('fountainTitle', title);
-    angular.mock.module('fountainTitle');
+      .module('appTitle', ['app/title.html'])
+      .component('appTitle', title);
+    angular.mock.module('appTitle');
   });
 
-  it('should render \'Allo, \'Allo!', angular.mock.inject(function ($rootScope, $compile) {
-    var element = $compile('<fountain-title></fountain-title>')($rootScope);
+  it('should render the title div', angular.mock.inject(function ($rootScope, $compile) {
+    var element = $compile('<app-title></app-title>')($rootScope);
     $rootScope.$digest();
-    var title = element.find('h1');
-    expect(title.html().trim()).toEqual('\'Allo, \'Allo!');
+    var title = element.find('div');
+    expect(title[0].outerHTML).toMatch(/title/);
   }));
 });

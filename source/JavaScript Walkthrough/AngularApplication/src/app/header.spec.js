@@ -5,15 +5,14 @@ var header = require('./header');
 describe('header component', function () {
   beforeEach(function () {
     angular
-      .module('fountainHeader', ['app/header.html'])
-      .component('fountainHeader', header);
-    angular.mock.module('fountainHeader');
+      .module('appHeader', ['app/header.html'])
+      .component('appHeader', header);
+    angular.mock.module('appHeader');
   });
 
-  it('should render \'Fountain Generator\'', angular.mock.inject(function ($rootScope, $compile) {
-    var element = $compile('<fountain-header></fountain-header>')($rootScope);
+  it('should render the header', angular.mock.inject(function ($rootScope, $compile) {
+    var element = $compile('<app-header></app-header>')($rootScope);
     $rootScope.$digest();
-    var header = element.find('a');
-    expect(header.html().trim()).toEqual('Fountain Generator');
+    expect(element.find('header').length).toEqual(1);
   }));
 });
