@@ -34,6 +34,32 @@
 
                     AllowAccessToAllScopes = true,
                     AccessTokenLifetime = 60
+                },
+                new Client
+                {
+                    Enabled = true,
+                    ClientName = "Angular Client",
+                    ClientId = "ng",
+                    Flow = Flows.Implicit,
+
+                    RedirectUris = new List<string>
+                    {
+                        "http://localhost:3000/popup.html",
+                        "http://localhost:3000/silent-renew.html"
+                    },
+
+                    PostLogoutRedirectUris = new List<string>
+                    {
+                        "http://localhost:3000/index.html"
+                    },
+
+                    AllowedCorsOrigins = new List<string>
+                    {
+                        "http://localhost:3000"
+                    },
+
+                    AllowAccessToAllScopes = true,
+                    AccessTokenLifetime = 60
                 }
             };
         }

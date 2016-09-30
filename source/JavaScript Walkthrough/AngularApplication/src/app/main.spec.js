@@ -3,9 +3,13 @@ require('angular-mocks');
 var main = require('./main');
 
 describe('main component', function () {
+  function mockAuthService() {
+  }
+
   beforeEach(function () {
     angular
       .module('app', ['app/main.html'])
+      .service('authService', mockAuthService)
       .component('app', main);
     angular.mock.module('app');
   });

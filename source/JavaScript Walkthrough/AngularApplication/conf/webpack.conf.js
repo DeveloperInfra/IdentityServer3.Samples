@@ -35,6 +35,27 @@ module.exports = {
         loaders: [
           'html'
         ]
+      },
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel'
+      },
+      {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file'
+      },
+      {
+        test: /\.(woff|woff2)$/,
+        loader: 'url?prefix=font/&limit=5000'
+      },
+      {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&mimetype=application/octet-stream'
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&mimetype=image/svg+xml'
       }
     ]
   },
@@ -43,15 +64,35 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
       template: conf.path.src('index.html'),
-      inject: true
+      inject: true,
+      excludeChunks: [
+        'popup',
+        'silentrenew'
+      ]
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'popup.html',
+      template: conf.path.src('popup.html'),
+      inject: true,
+      chunks: ['popup']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'silentrenew.html',
+      template: conf.path.src('silentrenew.html'),
+      inject: true,
+      chunks: ['silentrenew']
     })
   ],
   postcss: () => [autoprefixer],
   debug: true,
-  devtool: 'cheap-module-inline-source-map',
+  devtool: 'cheap-module-eval-source-map',
   output: {
     path: path.join(process.cwd(), conf.paths.tmp),
-    filename: 'index.js'
+    filename: '[name].js'
   },
-  entry: `./${conf.path.src('index')}`
+  entry: {
+    index: `./${conf.path.src('index')}`,
+    popup: `./${conf.path.src('popup')}`,
+    silentrenew: `./${conf.path.src('silentrenew')}`
+  }
 };
