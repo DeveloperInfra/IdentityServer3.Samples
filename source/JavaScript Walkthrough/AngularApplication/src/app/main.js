@@ -2,13 +2,13 @@ var angular = require('angular');
 
 module.exports = {
   template: require('./main.html'),
-  controller: MainController,
+  controller: mainController,
   controllerAs: 'vm'
 };
 
-MainController.$inject = ['$http', '$log', '$timeout', 'authService'];
+mainController.$inject = ['$http', '$log', '$timeout', 'authService'];
 /* @ngInject */
-function MainController($http, $log, $timeout, authService) {
+function mainController($http, $log, $timeout, authService) {
   var vm = this;
 
   vm.user = '';
