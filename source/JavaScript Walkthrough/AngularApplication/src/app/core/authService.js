@@ -18,9 +18,9 @@ function authService($log) {
     var settings = {
       authority: 'https://localhost:44300',
       client_id: 'ng',
-      popup_redirect_uri: 'http://localhost:3000/popup.html',
-      silent_redirect_uri: 'http://localhost:3000/silentrenew.html',
-      post_logout_redirect_uri: 'http://localhost:3000/index.html',
+      popup_redirect_uri: 'https://localhost:3000/popup.html',
+      silent_redirect_uri: 'https://localhost:3000/silentrenew.html',
+      post_logout_redirect_uri: 'https://localhost:3000/index.html',
 
       response_type: 'id_token token',
       scope: 'openid profile email api',

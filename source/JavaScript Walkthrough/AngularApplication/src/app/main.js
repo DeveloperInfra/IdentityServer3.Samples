@@ -49,7 +49,7 @@ function mainController($http, $log, $timeout, authService) {
     return function () {
       $log.info('The user clicked Call API...');
       $http({
-        url: 'http://localhost:60136/values',
+        url: 'https://localhost:44313/values',
         method: 'GET',
         dataType: 'json'
       }).then(function (data) {

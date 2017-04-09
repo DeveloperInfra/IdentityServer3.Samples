@@ -8,6 +8,7 @@ module.exports = function () {
         conf.paths.src
       ]
     },
+    https: true,
     open: false
   };
 };
