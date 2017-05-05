@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="list-inline list-unstyled">
+        <li><a href="#" class="btn btn-primary">Home</a></li>
+        <li><button type="button" class="btn btn-default" (click)="login()">Login</button></li>
+        <li><button type="button" class="btn btn-default" (click)="callApi()">Call API</button></li>
+        <li><button type="button" class="btn btn-danger" (click)="logout()">Logout</button></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">User data</div>
+        <div class="panel-body">
+          <pre>{{user}}</pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">API call result</div>
+        <div class="panel-body">
+          <pre>{{apiResult}}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

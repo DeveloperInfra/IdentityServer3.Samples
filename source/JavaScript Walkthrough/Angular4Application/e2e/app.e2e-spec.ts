@@ -1,10 +1,10 @@
-import { Angular2ApplicationPage } from './app.po';
+import { Angular4ApplicationPage } from './app.po';
 
-describe('angular2-application App', () => {
-  let page: Angular2ApplicationPage;
+describe('angular4-application App', () => {
+  let page: Angular4ApplicationPage;
 
   beforeEach(() => {
-    page = new Angular2ApplicationPage();
+    page = new Angular4ApplicationPage();
   });
 
   it('should display message saying app works', () => {

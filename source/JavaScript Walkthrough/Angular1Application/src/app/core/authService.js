@@ -17,7 +17,7 @@ function authService($log) {
 
     var settings = {
       authority: 'https://localhost:44300',
-      client_id: 'ng',
+      client_id: 'ng1',
       popup_redirect_uri: 'https://localhost:3000/popup.html',
       silent_redirect_uri: 'https://localhost:3000/silentrenew.html',
       post_logout_redirect_uri: 'https://localhost:3000/index.html',

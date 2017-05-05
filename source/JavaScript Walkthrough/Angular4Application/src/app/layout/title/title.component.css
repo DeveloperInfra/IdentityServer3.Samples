@@ -1,0 +1,21 @@
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+.title-h1 {
+  font-weight: 300;
+  font-size: 4rem;
+  margin: 1rem;
+}
+.title-logo {
+  height: 12rem;
+  border-radius: 1rem;
+  margin: 1rem;
+}
+.title-h2 {
+  font-weight: 300;
+  font-size: 2rem;
+  margin: .5rem;
+}

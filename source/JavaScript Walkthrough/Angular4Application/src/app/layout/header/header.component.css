@@ -1,0 +1,11 @@
+.header {
+  align-items: center;
+}
+.header.navbar {
+      margin-bottom: 0;
+  }
+.header-title {
+  flex: 1;
+  font-size: 1.5rem;
+  margin: 1rem;
+}

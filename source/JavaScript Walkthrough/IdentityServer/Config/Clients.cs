@@ -38,8 +38,8 @@
                 new Client
                 {
                     Enabled = true,
-                    ClientName = "Angular Client",
-                    ClientId = "ng",
+                    ClientName = "Angular 1 Client",
+                    ClientId = "ng1",
                     Flow = Flows.Implicit,
 
                     RedirectUris = new List<string>
@@ -56,6 +56,32 @@
                     AllowedCorsOrigins = new List<string>
                     {
                         "https://localhost:3000"
+                    },
+
+                    AllowAccessToAllScopes = true,
+                    AccessTokenLifetime = 60
+                },
+                new Client
+                {
+                    Enabled = true,
+                    ClientName = "Angular 4 Client",
+                    ClientId = "ng4",
+                    Flow = Flows.Implicit,
+
+                    RedirectUris = new List<string>
+                    {
+                        "https://localhost:4200/popup.html",
+                        "https://localhost:4200/silentrenew.html"
+                    },
+
+                    PostLogoutRedirectUris = new List<string>
+                    {
+                        "https://localhost:4200/index.html"
+                    },
+
+                    AllowedCorsOrigins = new List<string>
+                    {
+                        "https://localhost:4200"
                     },
 
                     AllowAccessToAllScopes = true,
